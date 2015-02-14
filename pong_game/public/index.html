@@ -1,0 +1,35 @@
+<!doctype html>
+<!--
+  index.html
+-->
+
+<html>
+<head>
+  <!-- ie9+ rendering support for latest standards -->
+  <meta http-equiv="Content-Type" content="text/html;
+    charset=ISO-8859-1">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>Pong</title>
+
+  <!-- third party stylesheets -->
+
+  <!-- stylesheets -->
+  <link rel="stylesheet" href="css/pong.css"       type="text/css"/>
+  <link rel="stylesheet" href="css/pong.shell.css" type="text/css"/>
+
+  <!-- third party javascript --> 
+  <script src="js/jq/jquery-1.11.2.min.js" ></script>
+
+  <!-- javascript -->
+  <script src="js/pong.js"       ></script>
+  <script src="js/pong.shell.js" ></script>
+
+  <script>
+    $(function () { spa.initModule( $('#pong') ); });
+  </script>
+
+</head>
+<body>
+<div id="pong"></div>
+</body>
+</html>
