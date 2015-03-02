@@ -9,6 +9,19 @@
   white  : true
  */
 
+  pong.shell = (function () {
+  //------------------BEGIN MODULE SCOPE VAR--------------
+  
+  var
+    configMap = {
+      main_html : String()
+	+ '<p>Welcome to Pong Game</p>'
+    },
+    stateMap = { $container : null },
+    jqueryMap = {},
+    setJqueryMap, initModule;
+  //------------------END MODULE SCOPE VAR----------------
+
   //------------------BEGIN UTILITY METHODS---------------
   //------------------END UTILITY METHODS-----------------
 
