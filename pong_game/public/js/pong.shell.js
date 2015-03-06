@@ -28,31 +28,31 @@
     setJqueryMap, initModule;
 
     // Game elements
-    var
-      canvas,
-      ctx,
-      keystate;
+  var
+    canvas,
+    ctx,
+    keystate;
 
-    // The player paddle
-    // type Object
-    player = {
-      x: null,
-      y: null,
+  // The player paddle
+  // type Object
+  player = {
+    x: null,
+    y: null,
 
-      width:  20,
-      height: 100,
-      // Update the position depending on pressed keys
-      update: function() {
-	if (keystate[UpArrow]) this.y -= 7;
-          if (keystate[DownArrow]) this.y += 7;
-	    // keep the paddle inside of the canvas
-	    this.y = Math.max(Math.min(this.y, HEIGHT - this.height), 0);
-      },
+    width:  20,
+    height: 100,
+    // Update the position depending on pressed keys
+    update: function() {
+      if (keystate[UpArrow]) this.y -= 7;
+        if (keystate[DownArrow]) this.y += 7;
+	// keep the paddle inside of the canvas
+	this.y = Math.max(Math.min(this.y, HEIGHT - this.height), 0);
+    },
     // Draw the player paddle to the canvas
-      draw: function() {
-        ctx.fillRect(this.x, this.y, this.width, this.height);
-      }
+    draw: function() {
+      ctx.fillRect(this.x, this.y, this.width, this.height);
     }
+  }
 
   //------------------END MODULE SCOPE VAR----------------
 
