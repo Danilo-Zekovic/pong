@@ -25,6 +25,7 @@
     pi = Math.PI,
 
     UpArrow = 38, DownArrow = 40,
+    initObjects, draw, update,
     setJqueryMap, initModule;
 
     // Game elements
@@ -188,9 +189,46 @@
     }
   };  // end setJqueryMap
 
+  
+  // Initatite game objects and set start positions
+  function initObjects() {
+    player.x = player.width;
+    player.y = (HEIGHT - player.height)/2;
+    ai.x = WIDTH - (player.width + ai.width);
+    ai.y = (HEIGHT - ai.height)/2;
+    ball.serve(1);
+  }
+
   //------------------END DOM METHODS---------------------
   
   //------------------BEGIN EVENT HANDLERS----------------
+
+  // Starts the game
+  function main() {
+    // create, initiate and append game canvas
+    canvas = document.createElement("canvas");
+    canvas.width = WIDTH;
+    canvas.height = HEIGHT;
+    ctx = canvas.getContext("2d");
+    document.body.appendChild(canvas);
+    keystate = {};
+    // keep track of keyboard presses
+    document.addEventListener("keydown", function(evt) {
+      keystate[evt.keyCode] = true;
+    });
+    document.addEventListener("keyup", function(evt) {
+      delete keystate[evt.keyCode];
+    });
+    init(); // initiate game objects
+    // game loop function
+    var loop = function() {
+      update();
+      draw();
+      window.requestAnimationFrame(loop, canvas);
+    };
+    window.requestAnimationFrame(loop, canvas);
+  }
+
   //------------------END EVENT HANDLERS------------------
   
   //------------------BEGIN PUBLIC METHODS----------------
