@@ -2,4 +2,9 @@
  * pong.shell.css
  */
 
-
+canvas {
+  display: block;
+  position: absolute;
+  top: 2em;
+  left: 2em;
+}
