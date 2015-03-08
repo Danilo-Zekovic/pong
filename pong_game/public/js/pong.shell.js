@@ -149,6 +149,34 @@
   //------------------END MODULE SCOPE VAR----------------
 
   //------------------BEGIN UTILITY METHODS---------------
+  
+  // Update all game objects
+  function update() {
+    ball.update();
+    player.update();
+    ai.update();
+  }
+
+  // Clear canvas and draw all game objects and net
+  function draw() {
+    ctx.fillRect(0, 0, WIDTH, HEIGHT);
+    ctx.save();
+    ctx.fillStyle = "#fff";
+    ball.draw();
+    player.draw();
+    ai.draw();
+    // draw the net
+    var w = 4;
+    var x = (WIDTH - w)*0.5;
+    var y = 0;
+    var step = HEIGHT/20; // how many net segments
+    while (y < HEIGHT) {
+      ctx.fillRect(x, y+step*0.25, w, step*0.5);
+      y += step;
+    }
+    ctx.restore();
+  }
+
   //------------------END UTILITY METHODS-----------------
 
   //------------------BEGIN DOM METHODS-------------------
