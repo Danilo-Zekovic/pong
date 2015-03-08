@@ -25,7 +25,7 @@
     pi = Math.PI,
 
     UpArrow = 38, DownArrow = 40,
-    initObjects, draw, update,
+    initObjects, draw, update, startGame,
     setJqueryMap, initModule;
 
     // Game elements
@@ -204,7 +204,7 @@
   //------------------BEGIN EVENT HANDLERS----------------
 
   // Starts the game
-  function main() {
+  function startGame() {
     // create, initiate and append game canvas
     canvas = document.createElement("canvas");
     canvas.width = WIDTH;
@@ -219,7 +219,7 @@
     document.addEventListener("keyup", function(evt) {
       delete keystate[evt.keyCode];
     });
-    init(); // initiate game objects
+    initObjects(); // initiate game objects
     // game loop function
     var loop = function() {
       update();
@@ -237,6 +237,7 @@
     stateMap.$container = $container;
     $container.html( configMap.main_html );
     setJqueryMap();
+    startGame();
   };
   
 
