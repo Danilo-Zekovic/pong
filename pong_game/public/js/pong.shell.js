@@ -20,7 +20,7 @@
     stateMap = { $container : null },
     jqueryMap = {},
     // constants for the canvas size
-    WIDTH = 700, HEIGHT = 600,
+    WIDTH = 700, HEIGHT = 400,
 
     pi = Math.PI,
 
