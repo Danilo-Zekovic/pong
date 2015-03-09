@@ -16,6 +16,21 @@
     configMap = {
       main_html : String()
 	+ '<p>Welcome to Pong Game2</p>'
+	+ '<div class="data">'
+	  + '<div class="data-atributes">'
+	    + '<div class="value-attr">'
+	    + '</div>'
+	    + '<div class="angle-attr">'
+	    + '</div>'
+	  + '</div>'
+	  + '<div class="data-values">'
+	    + '<div class="velocity">'
+	    + '</div>'
+	    + '<div class="angle">'
+	    + '</div>'
+	    + '</div>'
+	+ '</div>'
+	+ '<canvas width=900 height=800>'
     },
     stateMap = { $container : null },
     jqueryMap = {},
@@ -81,7 +96,7 @@
     y:   null,
     vel: null,
     side:  20,
-    speed: 12,
+    speed: 4,
     // Serves the ball towards the specified side
     // @param  {number} side 1 right
     //                      -1 left
