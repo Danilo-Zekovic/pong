@@ -8,3 +8,61 @@ canvas {
   top: 2em;
   left: 2em;
 }
+
+.data{
+  position : absolute;
+  width : 40em;
+  height : 30em;
+  top : 2em;
+  right : 2em;
+  background : orange;
+}
+
+.data-values {
+  position : absolute;
+  width : 100%;
+  height : 28em;
+  bottom : 0;
+}
+
+.velocity {
+  position : absolute;
+  width : 50%;
+  left : 0;
+  height : 100%;
+  background-color : gray;
+  overflow-y : scroll;
+}
+
+.angle {
+  position : absolute;
+  width : 50%;
+  right : 0;
+  height : 100%;
+  background-color : blue;
+  overflow-y : scroll;
+}
+
+.data-atributes {
+  position : absolute;
+  width : 100%;
+  height : 2em;
+  top : 0;
+  background : green;
+}
+
+.value-attr, .angle-attr {
+  position : absolute;
+  width : 50%;
+  height : 2em;
+  top : 0;
+}
+.value-attr {
+  left : 0;
+  background : yellow;
+}
+
+.angle-attr {
+  right : 0;
+  background : purple;
+}
