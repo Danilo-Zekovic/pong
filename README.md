@@ -1,6 +1,9 @@
 # pong
 Game of pong
 
+How to run the app:
+First do npm install, then just npm start; 
+
 Refrences
 Books:
 Single Page Web Application by Michael S. Mikowski and Josh C. Powell;
