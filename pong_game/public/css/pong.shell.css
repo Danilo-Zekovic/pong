@@ -5,7 +5,7 @@
 canvas {
   display: block;
   position: absolute;
-  top: 4em;
+  top: 8em;
   left: 2em;
 }
 
@@ -79,4 +79,11 @@ h1 {
   background : #E47EE3;
   
   border-left : 1em solid purple;
+}
+
+.change-speed {
+  position : absolute;
+  width : 20em;
+  left : 4em;
+  color : white;
 }
