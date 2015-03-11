@@ -34,7 +34,7 @@
 	+ '</div>'
 	+ '<div class="change-speed">'
 	  + '<button class="change-speed-btn">Change</button>'
-	  + '  Ball Speed: <input type="number" class="change-speed-tbox" value="4">'
+	  + '  Ball Speed: <input type="number" class="change-speed-tbox" value=4 />'
 	+ '</div>'
     },
     stateMap = { $container : null },
@@ -213,7 +213,8 @@
       $container     : $container,
       $vel           : $container.find(".velocity"),
       $ang           : $container.find(".angle"),
-      $change_bt     : $container.find(".change-speed-btn") 
+      $change_bt     : $container.find(".change-speed-btn"),
+      $change_tb     : $container.find(".change-speed-tbox") 
     }
   };  // end setJqueryMap
 
@@ -267,7 +268,8 @@
   // set the speed of the ball after click
   setSpeed = function (event) {
     console.log( "Change has been clicked" ); 
-  
+    console.log("ball speed: " + ball.speed);
+    console.log("Input value: " + jqueryMap.$change_tb.value); 
   }
 
   //------------------END EVENT HANDLERS------------------
