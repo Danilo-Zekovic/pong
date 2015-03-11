@@ -15,7 +15,7 @@
   var
     configMap = {
       main_html : String()
-	+ '<p>Welcome to Pong Game2</p>'
+	+ '<h1>Welcome to SJC Pong Game</h1>'
 	+ '<div class="data">'
 	  + '<div class="data-atributes">'
 	    + '<div class="value-attr">'
@@ -32,7 +32,6 @@
 	    + '</div>'
 	    + '</div>'
 	+ '</div>'
-	+ '<canvas width=900 height=800>'
     },
     stateMap = { $container : null },
     jqueryMap = {},
@@ -147,7 +146,7 @@
         this.x = pdle===player ? player.x+player.width : ai.x - this.side;
         var n = (this.y+this.side - pdle.y)/(pdle.height+this.side);
         var phi = 0.25*pi*(2*n - 1); // pi/4 = 45
-	jqueryMap.$ang.append(" " + phi + "<br>");
+	jqueryMap.$ang.append( phi + "<br>");
         // calculate smash value and update velocity
         var smash = Math.abs(phi) > 0.2*pi ? 1.5 : 1;
         this.vel.x = smash*(pdle===player ? 1 : -1)*this.speed*Math.cos(phi);
@@ -257,7 +256,7 @@
   function displayVel(x, y) {
     var vel = Math.sqrt(x*x+y*y);
     //console.log("x: " + x + "  y: " + y);
-    jqueryMap.$vel.append(vel + "<br>");
+    jqueryMap.$vel.append( vel + "<br>");
   }
 
   //------------------END EVENT HANDLERS------------------
