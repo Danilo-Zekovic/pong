@@ -32,16 +32,20 @@
 	    + '</div>'
 	    + '</div>'
 	+ '</div>'
+	+ '<div class="change-speed">'
+	  + '<button class="change-speed-btn">Change</button>'
+	  + '  Ball Speed: <input type="number" class="change-speed-tbox" value="4">'
+	+ '</div>'
     },
     stateMap = { $container : null },
     jqueryMap = {},
     // constants for the canvas size
     WIDTH = 700, HEIGHT = 400,
 
-    pi = Math.PI,
+    pi = Math.PI, 
 
     UpArrow = 38, DownArrow = 40,
-    initObjects, draw, update, startGame, displayVel, displayAng,
+    initObjects, draw, update, startGame, displayVel, displayAng, setSpeed,
     setJqueryMap, initModule;
 
     // Game elements
@@ -208,7 +212,8 @@
     jqueryMap = {
       $container     : $container,
       $vel           : $container.find(".velocity"),
-      $ang           : $container.find(".angle") 
+      $ang           : $container.find(".angle"),
+      $change_bt     : $container.find(".change-speed-btn") 
     }
   };  // end setJqueryMap
 
@@ -258,6 +263,12 @@
     //console.log("x: " + x + "  y: " + y);
     jqueryMap.$vel.append( vel + "<br>");
   }
+  
+  // set the speed of the ball after click
+  setSpeed = function (event) {
+    console.log( "Change has been clicked" ); 
+  
+  }
 
   //------------------END EVENT HANDLERS------------------
   
@@ -268,6 +279,11 @@
     $container.html( configMap.main_html );
     setJqueryMap();
     startGame();
+
+    // button
+    // event
+    jqueryMap.$change_bt
+      .click( setSpeed );
   };
   
 
