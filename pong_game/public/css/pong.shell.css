@@ -5,13 +5,23 @@
 canvas {
   display: block;
   position: absolute;
-  top: 2em;
+  top: 4em;
   left: 2em;
+}
+
+body {
+  background-image : url('bg.jpg');
+  background-position : 30% 10%;
+  background-size : 100%;
+}
+
+h1 {
+  color : white;
 }
 
 .data{
   position : absolute;
-  width : 40em;
+  width : 30em;
   height : 30em;
   top : 2em;
   right : 2em;
@@ -30,7 +40,7 @@ canvas {
   width : 50%;
   left : 0;
   height : 100%;
-  background-color : gray;
+  background-color : #CF6FCD;
   overflow-y : scroll;
   color : black;
 }
@@ -40,7 +50,7 @@ canvas {
   width : 50%;
   right : 0;
   height : 100%;
-  background-color : gray;
+  background-color : #CF6FCD;
   overflow-y : scroll;
   color : black;
 }
@@ -61,10 +71,12 @@ canvas {
 }
 .value-attr {
   left : 0;
-  background : yellow;
+  background : #E47EE3;
 }
 
 .angle-attr {
   right : 0;
-  background : purple;
+  background : #E47EE3;
+  
+  border-left : 1em solid purple;
 }
