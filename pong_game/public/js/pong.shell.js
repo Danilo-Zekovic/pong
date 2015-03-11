@@ -19,8 +19,10 @@
 	+ '<div class="data">'
 	  + '<div class="data-atributes">'
 	    + '<div class="value-attr">'
+	      + 'Velocity'
 	    + '</div>'
 	    + '<div class="angle-attr">'
+	      + 'Angle'
 	    + '</div>'
 	  + '</div>'
 	  + '<div class="data-values">'
@@ -40,7 +42,7 @@
     pi = Math.PI,
 
     UpArrow = 38, DownArrow = 40,
-    initObjects, draw, update, startGame,
+    initObjects, draw, update, startGame, displayVel, displayAng,
     setJqueryMap, initModule;
 
     // Game elements
@@ -108,6 +110,7 @@
       // calculate out-angle, higher/lower on the y-axis =>
       // steeper angle
       var phi = 0.1*pi*(1 - 2*r);
+      //jqueryMap.$ang.append( phi + "<br>"); // inital angle
       // set velocity direction and magnitude
       this.vel = {
 	x: side*this.speed*Math.cos(phi),
@@ -144,10 +147,14 @@
         this.x = pdle===player ? player.x+player.width : ai.x - this.side;
         var n = (this.y+this.side - pdle.y)/(pdle.height+this.side);
         var phi = 0.25*pi*(2*n - 1); // pi/4 = 45
+	jqueryMap.$ang.append(" " + phi + "<br>");
         // calculate smash value and update velocity
         var smash = Math.abs(phi) > 0.2*pi ? 1.5 : 1;
         this.vel.x = smash*(pdle===player ? 1 : -1)*this.speed*Math.cos(phi);
         this.vel.y = smash*this.speed*Math.sin(phi);
+
+	// append velocity to data vel box
+	displayVel(this.vel.x, this.vel.y);
       }
       // reset the ball when ball outside of the canvas in the
       // x direction
@@ -200,7 +207,9 @@
   setJqueryMap = function () {
     var $container = stateMap.$container;
     jqueryMap = {
-      $container     : $container 
+      $container     : $container,
+      $vel           : $container.find(".velocity"),
+      $ang           : $container.find(".angle") 
     }
   };  // end setJqueryMap
 
@@ -242,6 +251,13 @@
       window.requestAnimationFrame(loop, canvas);
     };
     window.requestAnimationFrame(loop, canvas);
+  }
+
+  // display velocity
+  function displayVel(x, y) {
+    var vel = Math.sqrt(x*x+y*y);
+    //console.log("x: " + x + "  y: " + y);
+    jqueryMap.$vel.append(vel + "<br>");
   }
 
   //------------------END EVENT HANDLERS------------------
