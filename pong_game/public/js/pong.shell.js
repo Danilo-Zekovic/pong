@@ -150,7 +150,7 @@
         this.x = pdle===player ? player.x+player.width : ai.x - this.side;
         var n = (this.y+this.side - pdle.y)/(pdle.height+this.side);
         var phi = 0.25*pi*(2*n - 1); // pi/4 = 45
-	jqueryMap.$ang.append( (phi*180/pi) + "<br>");
+	jqueryMap.$ang.prepend( (phi*180/pi) + "<br>");
         // calculate smash value and update velocity
         var smash = Math.abs(phi) > 0.2*pi ? 1.5 : 1;
         this.vel.x = smash*(pdle===player ? 1 : -1)*this.speed*Math.cos(phi);
@@ -262,7 +262,7 @@
   function displayVel(x, y) {
     var vel = Math.sqrt(x*x+y*y);
     //console.log("x: " + x + "  y: " + y);
-    jqueryMap.$vel.append( vel + "<br>");
+    jqueryMap.$vel.prepend( vel + "<br>");
   }
   
   // set the speed of the ball after click
