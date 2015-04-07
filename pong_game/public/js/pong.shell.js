@@ -34,7 +34,7 @@
 	+ '</div>'
 	+ '<div class="change-speed">'
 	  + '<button class="change-speed-btn">Change</button>'
-	  + '  Ball Speed: <input type="number" class="change-speed-tbox" value=4 />'
+	  + '  Ball Speed: <input type="number" class="change-speed-tbox" value=4 min="1" />'
 	+ '</div>'
     },
     stateMap = { $container : null },
@@ -150,7 +150,7 @@
         this.x = pdle===player ? player.x+player.width : ai.x - this.side;
         var n = (this.y+this.side - pdle.y)/(pdle.height+this.side);
         var phi = 0.25*pi*(2*n - 1); // pi/4 = 45
-	jqueryMap.$ang.append( phi + "<br>");
+	jqueryMap.$ang.append( (phi*180/pi) + "<br>");
         // calculate smash value and update velocity
         var smash = Math.abs(phi) > 0.2*pi ? 1.5 : 1;
         this.vel.x = smash*(pdle===player ? 1 : -1)*this.speed*Math.cos(phi);
@@ -269,7 +269,8 @@
   setSpeed = function (event) {
     console.log( "Change has been clicked" ); 
     console.log("ball speed: " + ball.speed);
-    console.log("Input value: " + jqueryMap.$change_tb.value); 
+    console.log("Input value: " + jqueryMap.$change_tb.val());
+    ball.speed = jqueryMap.$change_tb.val(); 
   }
 
   //------------------END EVENT HANDLERS------------------
