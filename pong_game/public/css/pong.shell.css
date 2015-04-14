@@ -10,6 +10,13 @@ canvas {
 }
 
 body {
+
+  position : absolute;
+  min-height : 450px;
+  min-width  : 1250px;
+  right      : 0;
+  left       : 0;  
+
   background-image : url('bg.jpg');
   background-position : 30% 10%;
   background-size : 100%;
